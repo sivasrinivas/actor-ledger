@@ -15,7 +15,7 @@ public class ActorSystem implements AutoCloseable{
     }
 
     @Override
-    public void close() throws Exception {
+    public void close() {
         actors.forEach(ActorRef::stop); // stop() will set the running flag to false
         for (ActorRef<?> actorRef : actors) {
             try {
